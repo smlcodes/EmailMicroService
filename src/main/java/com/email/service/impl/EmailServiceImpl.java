@@ -51,7 +51,7 @@ public class EmailServiceImpl implements EmailService {
      */
     public void sendSimpleMail(EmailRequestDto dto) {
         try {
-            dto = getEmailDto();
+            //dto = getEmailDto();
             SimpleMailMessage message = new SimpleMailMessage();
             message.setFrom("email-service@gmail.com");
             message.setTo(dto.getTo());
