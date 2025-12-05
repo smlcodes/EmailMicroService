@@ -37,7 +37,7 @@ public class EmailController {
     @PostMapping("/send")
     public ResponseEntity sendEmail(@RequestBody EmailRequestDto emailRequestDto) {
         try {
-            log.info("Email Request: {}", emailRequestDto);
+            log.info("Email Request:{}", emailRequestDto);
             emailService.sendEmail(emailRequestDto);
             return ResponseEntity.status(HttpStatus.OK).body("Email Sent.");
         } catch (Exception ex) {
@@ -45,6 +45,7 @@ public class EmailController {
             return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body("Email Sent Failed.");
         }
     }
+
 
 
     @ApiOperation("Send email with attachments")
